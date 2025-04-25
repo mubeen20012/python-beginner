@@ -1,44 +1,48 @@
-#🔥 10 List Problems (Beginner to Advanced) with a Mini-Project
-#✅ Beginner (Basic List Operations)
-#1️⃣ Create a list of 5 numbers and print each number using a loop.
-"""numbers=[1,2,3,4,5]
-for number in numbers:
-  print(number)"""
-#2️⃣ Find the sum and average of all numbers in a list.
-"""number=[10,20,35,47,54]
-total=0
-for num in number:
-  total+=num
-average=total/len(number)
-print(f"sum: {total}")
-print(f"average: {average}")"""
-#3️⃣ Reverse a list without using the built-in .reverse() method.
-"""num=[7,6,5,4,3,2,1]
-for i in range (len(num)-1,-1,-1):
-  print(num[i])
-#4️⃣ Find the largest and smallest numbers in a list.
-numbers=[55,34,78,56]
-smallest=numbers[0]
-largest=numbers[0]
-for num in numbers:
-  if num>largest:
-    largest=num
-  if num<smallest:
-    smallest=num
-print(f"The smallest number is: {smallest}")
-print(f"The largest number is: {largest}")"""
-#5️⃣ Remove duplicates from a list without using set().
-def remove_duplicate(input_list):
-  unique_list=[]
-  for item in input_list:
-    if item not in unique_list:
-      unique_list.append(item)
-  return unique_list
-original_list=[1,2,2,3,4,4]
-result=remove_duplicate(original_list)
-print(f"duplicate: {result}")
-
-
-
-
+#Write a function to reverse a string
+"""def reverse():
+    name=input("Name: ").strip().title()
+    for i in range(len(name)-1,-1,-1):
+      print(name[i],end="")
+reverse()"""
+#Create a to-do list app (just basic list add/remove/show)
+def Todo():
+    Task=[]
+    print("Welcome to the ToDo app\nyou can perform the following operations.('just basic list add/remove/show)")
+    while True:
+        print("\n--Menu--")
+        print("1️⃣  Add Task")
+        print("2️⃣  View Tasks")
+        print("3️⃣  Remove Task")
+        print("4️⃣  Exit")
+        try:
+            choice=int(input("Choice: "))
+            if choice==1:
+                task=input("Task: ").strip().title()
+                Task.append(task)
+                print(f"Task {task} added to the list.")
+            elif choice==2:
+                if not Task:
+                        print("No task available.")
+                else:
+                    print("\n-- Show Task--")
+                    for task in Task:
+                      print(f"Task: {task}")        
+            elif choice==3:
+                task=input("Task to delete: ").strip().title()
+                if  not  Task:
+                    print(f"{task} not found in the list.")
+                else:
+                    for task in Task:
+                        Task.remove(task)
+                        print(f"Task {task} removed successfully.")
+            elif choice==4:
+                print("--Exit--")
+                print("Thanks for using the ToDo App.")
+                break
+            else:
+                print("Invalid choice. Pleae try again.")
+        except ValueError:
+            print("Invalid inpit,enter only integer.")
+Todo()
+    
 
